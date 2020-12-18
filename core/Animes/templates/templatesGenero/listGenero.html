@@ -1,0 +1,26 @@
+{% extends 'listas.html' %}
+{% load static %}
+
+
+{% block filas %}
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Editar</th>
+</tr>
+{% endblock  %}
+
+{% block columnas %}
+    {% for genero in generos  %}
+    <tr>
+        <td>{{genero.generosId}}</td>
+        <td>{{genero.name}}</td>
+        <td>
+            <a href="{% url 'edit_Genero' genero.generosId %}" class="btn btn-warning"><i class="bi bi-pencil-fill"></i></a>
+            <a href="{% url 'delete_Genero' genero.generosId %}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+        </td>
+    </tr>
+    {% endfor %} 
+{% endblock  %}
+
+

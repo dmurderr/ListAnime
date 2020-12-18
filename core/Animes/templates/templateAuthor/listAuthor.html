@@ -1,0 +1,31 @@
+{% extends 'listas.html' %}
+
+{% load static %}
+
+
+
+{% block filas %}
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Apellido</th>
+    <th>Editar</th>
+</tr>
+{% endblock  %}
+
+{% block columnas %}
+    {% for autor in autores  %}
+    <tr>
+        <td>{{autor.id}}</td>
+        <td>{{autor.name}}</td>
+        <td>{{autor.apellido}}</td>
+        <td>
+            <a href="{% url 'Edit_Author' autor.id %}" class="btn btn-warning"><i class="bi bi-pencil-fill"></i></a>
+            <a href="{% url 'delete_Author' autor.id %}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+        </td>
+    </tr>
+    {% endfor %} 
+{% endblock  %}
+
+
+

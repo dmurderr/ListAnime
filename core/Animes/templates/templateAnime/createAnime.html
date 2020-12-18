@@ -1,0 +1,40 @@
+{% extends 'form.html' %}
+
+{% load widget_tweaks %}
+
+{% block formulario %}  
+            <form role="form" method="POST" action="" enctype="multipart/form-data" >   
+                {% csrf_token %}    
+                <div class="card-body">
+                        {{form.errors}}
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">{{ form.name.label }}</label>
+                    {{ form.name|add_class:'form-control' }}
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">{{ form.autor.label }}</label>
+                    {{ form.autor | add_class:"custom-select"}}
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputFile">{{ form.imagen.label }}</label>
+                    <div class="input-group">
+                        {{form.imagen}}
+                    </div>
+                         <div class="form-group">
+                    <label for="exampleInputPassword1">{{ form.autor.label }}</label>
+                    {{ form.genero | add_class:"custom-select"}}
+                  </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">{{ form.date.label }}</label>
+                    {{ form.date}}
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </form>
+{% endblock  %}
+    

@@ -1,0 +1,20 @@
+{% extends 'form.html' %}
+{% load widget_tweaks %}
+
+{% block formulario %}
+
+  <form method="POST" action="." >
+    {% csrf_token %}
+    <div class="card-body">
+      <div class="form-group">
+        <label for="exampleInputEmail1">{{ form.name.label }}</label>
+        {{ form.name|add_class:'form-control' }}
+      </div>
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  
+  </form>
+{% endblock  %}

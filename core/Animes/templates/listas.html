@@ -1,0 +1,49 @@
+{% extends 'InicioSinBarraLateral.html' %}
+
+{% load static %}
+
+
+
+{% block contenido %}
+
+    <div class="card-body"> 
+        <div class="dataTables_wrapper dt-bootstrap4">
+            <div class="row">
+                <div class="col">
+                    <table id="tabla" class="table table-bordered table-hover dataTable dtr-inline" role="grid">
+                        <thead>
+                            {% block filas %}
+
+
+                            {% endblock  %}
+                          
+                        </thead>
+                        <tbody>
+                            {% block columnas %}
+                          
+
+                            {% endblock  %}
+                    </tbody> 
+                
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+{% endblock  %}
+
+
+
+{% block extenderScripts %}
+
+<script>
+
+$(function () {
+    $('#tabla').DataTable();
+})
+
+</script>
+    
+{% endblock  %}
